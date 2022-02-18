@@ -1,4 +1,4 @@
-# login-signup-2022
+# Login & Registration Form In PHP And MySQL 2022
 
 version: 1.0.0
 
