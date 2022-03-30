@@ -15,8 +15,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
     	
-    	<div class="shadow w-450 p-3 text-center">
-            <h3 class="display-4 ">Hello, <?=$_SESSION['fname']?></h3>
+    	<div class="shadow w-350 p-3 text-center">
+    		<img src="upload/<?=$_SESSION['pp']?>"
+    		     class="img-fluid rounded-circle">
+            <h3 class="display-4 "><?=$_SESSION['fname']?></h3>
             <a href="logout.php" class="btn btn-warning">
             	Logout
             </a>

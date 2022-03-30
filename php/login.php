@@ -32,10 +32,13 @@ if(isset($_POST['uname']) &&
           $password =  $user['password'];
           $fname =  $user['fname'];
           $id =  $user['id'];
+          $pp =  $user['pp'];
+
           if($username === $uname){
              if(password_verify($pass, $password)){
                  $_SESSION['id'] = $id;
                  $_SESSION['fname'] = $fname;
+                 $_SESSION['pp'] = $pp;
 
                  header("Location: ../home.php");
                  exit;

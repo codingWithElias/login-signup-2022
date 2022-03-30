@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2022 at 08:57 AM
+-- Generation Time: Mar 30, 2022 at 04:28 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -31,7 +31,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `pp` varchar(255) NOT NULL DEFAULT 'default-pp.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

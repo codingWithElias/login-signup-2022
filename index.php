@@ -12,7 +12,8 @@
     	
     	<form class="shadow w-450 p-3" 
     	      action="php/signup.php" 
-    	      method="post">
+    	      method="post"
+    	      enctype="multipart/form-data">
 
     		<h4 class="display-4  fs-1">Create Account</h4><br>
     		<?php if(isset($_GET['error'])){ ?>
@@ -47,6 +48,13 @@
 		    <input type="password" 
 		           class="form-control"
 		           name="pass">
+		  </div>
+
+		  <div class="mb-3">
+		    <label class="form-label">Profile Picture</label>
+		    <input type="file" 
+		           class="form-control"
+		           name="pp">
 		  </div>
 		  
 		  <button type="submit" class="btn btn-primary">Sign Up</button>
