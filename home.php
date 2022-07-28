@@ -2,6 +2,12 @@
 session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
+
+include "db_conn.php";
+include 'php/User.php';
+$user = getUserById($_SESSION['id'], $conn);
+
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -13,17 +19,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <?php if ($user) { ?>
     <div class="d-flex justify-content-center align-items-center vh-100">
     	
     	<div class="shadow w-350 p-3 text-center">
-    		<img src="upload/<?=$_SESSION['pp']?>"
+    		<img src="upload/<?=$user['pp']?>"
     		     class="img-fluid rounded-circle">
-            <h3 class="display-4 "><?=$_SESSION['fname']?></h3>
-            <a href="logout.php" class="btn btn-warning">
-            	Logout
+            <h3 class="display-4 "><?=$user['fname']?></h3>
+            <a href="edit.php" class="btn btn-primary">
+            	Edit Profile
+            </a>
+             <a href="logout.php" class="btn btn-warning">
+                Logout
             </a>
 		</div>
     </div>
+    <?php }else { 
+     header("Location: login.php");
+     exit;
+    } ?>
 </body>
 </html>
 
